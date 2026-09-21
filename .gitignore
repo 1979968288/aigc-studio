@@ -4,6 +4,4 @@ dist-ssr
 *.local
 .DS_Store
 coverage
-src/auto-imports.d.ts
-src/components.d.ts
 *.tsbuildinfo
