@@ -1,7 +1,7 @@
 import type { Router } from 'vue-router';
 import { useAuthStore } from '@/stores/auth';
 
-const APP_TITLE = 'AIGC 制作管理系统';
+const APP_TITLE = 'AI漫剧studio';
 
 /**
  * 全局守卫（对齐 KMOKE 模式，简化版）：

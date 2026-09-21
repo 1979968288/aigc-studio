@@ -33,7 +33,7 @@ async function enter(user: DemoUser): Promise<void> {
     <div class="w-full max-w-3xl">
       <div class="mb-8 text-center">
         <AppLogo :size="56" class="mb-4" />
-        <h1 class="text-2xl font-semibold text-text-primary">AIGC 制作管理系统</h1>
+        <h1 class="text-2xl font-semibold text-text-primary">AI漫剧studio</h1>
         <p class="mt-2 text-text-tertiary">团队创作协作演示 · 选择一个角色进入系统</p>
       </div>
 

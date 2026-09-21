@@ -90,7 +90,7 @@ export function useDashboardLayout() {
     popupCardId.value = cardId;
     const meta = cardMetaMap[cardId];
     if (meta) {
-      document.title = `${meta.title} · AIGC 制作管理系统`;
+      document.title = `${meta.title} · AI漫剧studio`;
     }
   }
 

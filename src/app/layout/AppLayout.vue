@@ -183,7 +183,7 @@ export default { name: 'AppLayout' };
       <div class="workbench-header__primary">
         <div class="workbench-header__brand" @click="router.push('/dashboard')">
           <AppLogo :size="32" />
-          <span class="workbench-header__title">AIGC 制作管理系统</span>
+          <span class="workbench-header__title">AI漫剧studio</span>
         </div>
 
         <div class="workbench-header__tabs">
