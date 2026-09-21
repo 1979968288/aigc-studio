@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AIGC 制作管理系统</title>
+    <script>
+      // 首屏前同步主题，避免暗色用户看到亮色闪屏
+      (function () {
+        try {
+          var raw = localStorage.getItem('aigc_studio_app_prefs');
+          var theme = raw ? (JSON.parse(raw).theme || 'light') : 'light';
+          if (theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

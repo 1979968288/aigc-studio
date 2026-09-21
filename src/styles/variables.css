@@ -1,0 +1,308 @@
+/*
+ * AIGC Studio UI Theme Tokens
+ *
+ * 单一事实源（对齐 KMOKE4 设计规范）：
+ * - primitive: 原始色板与尺度，只允许在主题文件内被引用派生
+ * - semantic: 品牌、状态、文本、背景、边框——页面与模块代码唯一可消费的层级
+ * - component: 高复用基础组件别名
+ * - 亮色定义于 :root，暗色定义于 [data-theme='dark']，同名 token 两套值
+ * - 禁止在页面级样式中硬编码颜色或引入第二主题源
+ */
+
+:root {
+  color-scheme: light;
+
+  /* Primitive: brand（克莱因蓝 · 高饱和） */
+  --primitive-brand-50: #eaf1ff;
+  --primitive-brand-75: #dbe7ff;
+  --primitive-brand-100: #c9dbff;
+  --primitive-brand-200: #99bcff;
+  --primitive-brand-300: #6696ff;
+  --primitive-brand-400: #3370ff;
+  --primitive-brand-500: #0055ff;
+  --primitive-brand-600: #0043d1;
+  --primitive-brand-700: #0033a3;
+  --primitive-brand-800: #002375;
+  --primitive-brand-900: #001447;
+
+  --primitive-indigo-500: #6679ff;
+  --primitive-indigo-600: #5264eb;
+  --primitive-cyan-400: #6bc7ff;
+  --primitive-cyan-500: #4aa9f5;
+
+  /* Primitive: neutral */
+  --primitive-neutral-0: #ffffff;
+  --primitive-neutral-50: #f7f7fb;
+  --primitive-neutral-100: #f0eff7;
+  --primitive-neutral-150: #e7e5f1;
+  --primitive-neutral-200: #dad8e8;
+  --primitive-neutral-300: #c4c2d5;
+  --primitive-neutral-400: #a19db7;
+  --primitive-neutral-500: #807a94;
+  --primitive-neutral-600: #635d76;
+  --primitive-neutral-700: #474257;
+  --primitive-neutral-800: #2d2938;
+  --primitive-neutral-900: #1a1724;
+  --primitive-neutral-950: #111018;
+
+  /* Primitive: functional */
+  --primitive-red-400: #ff8b9d;
+  --primitive-red-500: #f26b7f;
+  --primitive-red-600: #db5166;
+  --primitive-green-400: #63d48f;
+  --primitive-green-500: #39bc72;
+  --primitive-green-600: #27995b;
+  --primitive-orange-400: #f6bc6b;
+  --primitive-orange-500: #ef9c3f;
+  --primitive-orange-600: #d9851e;
+  --primitive-blue-400: #7ac8ff;
+  --primitive-blue-500: #4daeff;
+  --primitive-blue-600: #2e89d9;
+
+  /* Primitive: overlays */
+  --primitive-overlay-disabled-light: rgb(99 93 118 / 14%);
+  --primitive-overlay-disabled-dark: rgb(142 136 170 / 16%);
+
+  /* Semantic: backgrounds */
+  --color-bg-page: #ffffff;
+  --color-bg-page-alt: #faf8ff;
+  --color-bg-surface: #ffffff;
+  --color-bg-card: #ffffff;
+  --color-bg-card-soft: rgb(0 85 255 / 6%);
+  --primitive-overlay-card: rgb(255 255 255 / 88%);
+  --color-bg-elevated: #ffffff;
+  --color-bg-panel: #ffffff;
+  --color-bg-popover: #ffffff;
+  --color-bg-toolbar: #ffffff;
+  --color-bg-hover: rgb(0 85 255 / 8%);
+  --color-bg-active: rgb(0 85 255 / 12%);
+  --color-bg-disabled: var(--primitive-overlay-disabled-light);
+  --color-bg-overlay: rgb(20 17 34 / 42%);
+  --color-bg-menu-active: rgb(0 85 255 / 14%);
+  --color-bg-chip: rgb(0 85 255 / 10%);
+
+  /* Semantic: text */
+  --color-text-primary: #1b1729;
+  --color-text-secondary: #4f4966;
+  --color-text-tertiary: #736d87;
+  --color-text-disabled: #9a96aa;
+  --color-text-placeholder: #918ca5;
+  --color-text-inverse: #0d0b14;
+  --color-text-on-emphasis: #ffffff;
+  --color-text-accent: #0043d1;
+
+  /* Semantic: borders */
+  --color-border-default: rgb(119 109 153 / 20%);
+  --color-border-strong: rgb(103 92 141 / 28%);
+  --color-border-divider: rgb(119 109 153 / 12%);
+  --color-border-focus: var(--primitive-brand-500);
+  --color-border-accent: rgb(0 85 255 / 38%);
+
+  /* Semantic: brand & actions */
+  --color-brand-primary: var(--primitive-brand-500);
+  --color-brand-primary-hover: var(--primitive-brand-600);
+  --color-brand-primary-active: var(--primitive-brand-700);
+  --color-action-primary: var(--color-brand-primary);
+  --color-action-primary-hover: var(--color-brand-primary-hover);
+  --color-action-primary-active: var(--color-brand-primary-active);
+  --color-action-link: var(--primitive-brand-600);
+  --color-action-link-hover: var(--primitive-brand-700);
+
+  /* Semantic: feedback */
+  --color-feedback-success: var(--primitive-green-500);
+  --color-feedback-warning: var(--primitive-orange-500);
+  --color-feedback-error: var(--primitive-red-500);
+  --color-feedback-info: var(--primitive-blue-500);
+
+  /* Semantic: subtle fills */
+  --color-fill-primary-subtle: rgb(0 85 255 / 12%);
+  --color-fill-primary-hover: rgb(0 85 255 / 18%);
+  --color-fill-primary-strong: linear-gradient(
+    135deg,
+    rgb(0 85 255 / 22%),
+    rgb(0 85 255 / 16%)
+  );
+  --color-fill-success-subtle: rgb(57 188 114 / 14%);
+  --color-fill-warning-subtle: rgb(239 156 63 / 16%);
+  --color-fill-error-subtle: rgb(242 107 127 / 16%);
+  --color-fill-info-subtle: rgb(77 174 255 / 16%);
+
+  /* Semantic: atmosphere */
+  --gradient-auth-shell:
+    radial-gradient(120% 88% at 8% -4%, rgb(0 85 255 / 18%) 0%, transparent 52%),
+    radial-gradient(96% 80% at 92% 0%, rgb(102 121 255 / 16%) 0%, transparent 46%),
+    radial-gradient(78% 88% at 50% 112%, rgb(74 169 245 / 12%) 0%, transparent 54%),
+    linear-gradient(180deg, #faf8ff 0%, #f0edf8 52%, #ece8f7 100%);
+  --gradient-auth-shell-dark:
+    radial-gradient(120% 88% at 10% -8%, rgb(0 85 255 / 34%) 0%, transparent 46%),
+    radial-gradient(104% 84% at 92% 0%, rgb(102 121 255 / 24%) 0%, transparent 42%),
+    radial-gradient(82% 92% at 50% 112%, rgb(74 169 245 / 16%) 0%, transparent 50%),
+    linear-gradient(180deg, #0f1018 0%, #131221 48%, #0a0b12 100%);
+
+  /* Component aliases */
+  --component-card-background: var(--color-bg-card);
+  --component-panel-background: var(--color-bg-panel);
+  --component-popover-background: var(--color-bg-popover);
+  --component-toolbar-background: var(--color-bg-toolbar);
+  --component-toolbar-border: var(--color-border-divider);
+  --component-control-background: rgb(255 255 255 / 76%);
+  --component-control-border: var(--color-border-default);
+  --component-control-border-hover: var(--color-border-accent);
+  --component-control-border-focus: var(--color-border-focus);
+  --component-focus-ring: 0 0 0 3px rgb(0 85 255 / 16%);
+  --component-table-header-background: var(--color-bg-surface);
+  --component-table-row-hover: rgb(0 85 255 / 8%);
+  --component-table-row-selected: var(--color-fill-primary-subtle);
+  --component-menu-item-selected: var(--color-bg-menu-active);
+  --component-tag-default-background: rgb(0 85 255 / 10%);
+  --component-chip-background: var(--color-bg-chip);
+  --component-tooltip-background: rgb(26 23 36 / 92%);
+  --component-tooltip-text: var(--color-text-on-emphasis);
+  --component-modal-background: #ffffff;
+  --component-drawer-background: #ffffff;
+  --component-overlay-backdrop: var(--color-bg-overlay);
+
+  /* Typography */
+  --font-family-sans:
+    Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', 'Noto Sans CJK SC', 'Source Han Sans SC', sans-serif;
+  --font-family-mono:
+    'SFMono-Regular', 'SF Mono', Consolas, 'Liberation Mono', Menlo, Monaco, 'Courier New',
+    monospace;
+  --font-size-12: 12px;
+  --font-size-14: 14px;
+  --font-size-16: 16px;
+  --font-size-20: 20px;
+  --font-size-24: 24px;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+
+  /* Spacing */
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 24px;
+  --spacing-6: 32px;
+  --spacing-7: 48px;
+  --spacing-8: 64px;
+
+  /* Radius */
+  --radius-1: 2px;
+  --radius-2: 4px;
+  --radius-3: 6px;
+  --radius-4: 8px;
+  --radius-5: 12px;
+  --radius-full: 9999px;
+
+  /* Control heights */
+  --control-height-sm: 28px;
+  --control-height: 32px;
+  --control-height-lg: 44px;
+
+  /* Shadows */
+  --shadow-card:
+    0 1px 2px rgb(17 16 28 / 4%), 0 10px 28px -14px rgb(17 16 28 / 14%);
+  --shadow-card-hover:
+    0 2px 4px rgb(17 16 28 / 5%), 0 16px 36px -16px rgb(17 16 28 / 20%);
+  --shadow-floating: 0 12px 32px -18px rgb(17 16 28 / 28%);
+  --shadow-dialog:
+    0 24px 64px -32px rgb(17 16 28 / 40%), 0 12px 24px -16px rgb(17 16 28 / 18%);
+
+  /* Scrollbar */
+  --scrollbar-track: transparent;
+  --scrollbar-thumb: rgb(119 109 153 / 32%);
+  --scrollbar-thumb-hover: rgb(119 109 153 / 48%);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-bg-page: #0b0c13;
+  --color-bg-page-alt: #10111a;
+  --color-bg-surface: rgb(21 22 33 / 78%);
+  --color-bg-card: rgb(24 26 38 / 90%);
+  --color-bg-card-soft: rgb(20 22 33 / 72%);
+  --primitive-overlay-card: rgb(24 26 38 / 90%);
+  --color-bg-elevated: rgb(31 33 48 / 96%);
+  --color-bg-panel: rgb(19 20 31 / 84%);
+  --color-bg-popover: rgb(31 33 48);
+  --color-bg-toolbar: rgb(18 19 29 / 76%);
+  --color-bg-hover: rgb(77 121 255 / 16%);
+  --color-bg-active: rgb(77 121 255 / 22%);
+  --color-bg-disabled: var(--primitive-overlay-disabled-dark);
+  --color-bg-overlay: rgb(6 7 12 / 66%);
+  --color-bg-menu-active: rgb(77 121 255 / 24%);
+  --color-bg-chip: rgb(77 121 255 / 18%);
+
+  --color-text-primary: #f2efff;
+  --color-text-secondary: #c6c0e0;
+  --color-text-tertiary: #978fb8;
+  --color-text-disabled: #706987;
+  --color-text-placeholder: #7f7896;
+  --color-text-inverse: #111018;
+  --color-text-on-emphasis: #ffffff;
+  --color-text-accent: #b3c4ff;
+
+  --color-border-default: rgb(166 154 205 / 18%);
+  --color-border-strong: rgb(166 154 205 / 26%);
+  --color-border-divider: rgb(166 154 205 / 10%);
+  --color-border-focus: #5a8cff;
+  --color-border-accent: rgb(90 140 255 / 34%);
+
+  --color-brand-primary: #4d79ff;
+  --color-brand-primary-hover: #6f96ff;
+  --color-brand-primary-active: #3d5fd9;
+  --color-action-primary: var(--color-brand-primary);
+  --color-action-primary-hover: var(--color-brand-primary-hover);
+  --color-action-primary-active: var(--color-brand-primary-active);
+  --color-action-link: #8fb0ff;
+  --color-action-link-hover: #b0c4ff;
+
+  --color-feedback-success: var(--primitive-green-400);
+  --color-feedback-warning: var(--primitive-orange-400);
+  --color-feedback-error: var(--primitive-red-400);
+  --color-feedback-info: var(--primitive-blue-400);
+
+  --color-fill-primary-subtle: rgb(77 121 255 / 16%);
+  --color-fill-primary-hover: rgb(77 121 255 / 24%);
+  --color-fill-primary-strong: linear-gradient(
+    135deg,
+    rgb(77 121 255 / 30%),
+    rgb(102 121 255 / 22%)
+  );
+  --color-fill-success-subtle: rgb(57 188 114 / 16%);
+  --color-fill-warning-subtle: rgb(239 156 63 / 18%);
+  --color-fill-error-subtle: rgb(242 107 127 / 18%);
+  --color-fill-info-subtle: rgb(77 174 255 / 18%);
+
+  --component-toolbar-background: var(--color-bg-toolbar);
+  --component-control-background: rgb(19 21 32 / 78%);
+  --component-control-border: var(--color-border-default);
+  --component-control-border-hover: var(--color-border-accent);
+  --component-control-border-focus: var(--color-border-focus);
+  --component-focus-ring: 0 0 0 3px rgb(77 121 255 / 20%);
+  --component-table-header-background: #1d1e2c;
+  --component-table-row-hover: rgb(77 121 255 / 10%);
+  --component-table-row-selected: var(--color-fill-primary-subtle);
+  --component-menu-item-selected: var(--color-bg-menu-active);
+  --component-tag-default-background: rgb(255 255 255 / 6%);
+  --component-chip-background: rgb(255 255 255 / 6%);
+  --component-tooltip-background: rgb(24 26 38 / 96%);
+  --component-tooltip-text: var(--color-text-primary);
+  --component-modal-background: rgb(24 26 38 / 96%);
+  --component-drawer-background: rgb(20 22 33 / 96%);
+
+  --shadow-card:
+    0 18px 40px -28px rgb(0 0 0 / 38%), 0 12px 24px -18px rgb(66 50 114 / 24%);
+  --shadow-card-hover:
+    0 28px 52px -28px rgb(0 0 0 / 48%), 0 18px 32px -18px rgb(89 69 152 / 28%);
+  --shadow-floating: 0 20px 44px -28px rgb(0 0 0 / 42%), 0 12px 26px -16px rgb(62 48 110 / 24%);
+  --shadow-dialog:
+    0 36px 88px -42px rgb(0 0 0 / 66%), 0 24px 40px -24px rgb(73 58 125 / 28%);
+
+  --scrollbar-track: transparent;
+  --scrollbar-thumb: rgb(166 154 205 / 26%);
+  --scrollbar-thumb-hover: rgb(166 154 205 / 40%);
+}

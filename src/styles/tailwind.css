@@ -1,0 +1,66 @@
+@import 'tailwindcss';
+
+/*
+ * 语义 token 导出到 Tailwind v4 工具类
+ * 使用 @theme inline 引用 variables.css 中的同名 CSS 变量，
+ * 主题切换（data-theme）时工具类取值自动跟随。
+ */
+@theme inline {
+  --color-bg-page: var(--color-bg-page);
+  --color-bg-page-alt: var(--color-bg-page-alt);
+  --color-bg-surface: var(--color-bg-surface);
+  --color-bg-card: var(--color-bg-card);
+  --color-bg-card-soft: var(--color-bg-card-soft);
+  --color-bg-elevated: var(--color-bg-elevated);
+  --color-bg-panel: var(--color-bg-panel);
+  --color-bg-popover: var(--color-bg-popover);
+  --color-bg-hover: var(--color-bg-hover);
+  --color-bg-active: var(--color-bg-active);
+  --color-bg-disabled: var(--color-bg-disabled);
+  --color-bg-overlay: var(--color-bg-overlay);
+
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-tertiary: var(--color-text-tertiary);
+  --color-text-disabled: var(--color-text-disabled);
+  --color-text-placeholder: var(--color-text-placeholder);
+  --color-text-inverse: var(--color-text-inverse);
+  --color-text-accent: var(--color-text-accent);
+
+  --color-border-default: var(--color-border-default);
+  --color-border-strong: var(--color-border-strong);
+  --color-border-divider: var(--color-border-divider);
+  --color-border-focus: var(--color-border-focus);
+  --color-border-accent: var(--color-border-accent);
+
+  --color-action-primary: var(--color-action-primary);
+  --color-action-primary-hover: var(--color-action-primary-hover);
+  --color-action-primary-active: var(--color-action-primary-active);
+  --color-action-link: var(--color-action-link);
+
+  --color-feedback-success: var(--color-feedback-success);
+  --color-feedback-warning: var(--color-feedback-warning);
+  --color-feedback-error: var(--color-feedback-error);
+  --color-feedback-info: var(--color-feedback-info);
+
+  --color-fill-primary-subtle: var(--color-fill-primary-subtle);
+  --color-fill-primary-hover: var(--color-fill-primary-hover);
+  --color-fill-success-subtle: var(--color-fill-success-subtle);
+  --color-fill-warning-subtle: var(--color-fill-warning-subtle);
+  --color-fill-error-subtle: var(--color-fill-error-subtle);
+  --color-fill-info-subtle: var(--color-fill-info-subtle);
+
+  --font-sans: var(--font-family-sans);
+  --font-mono: var(--font-family-mono);
+
+  --radius-1: var(--radius-1);
+  --radius-2: var(--radius-2);
+  --radius-3: var(--radius-3);
+  --radius-4: var(--radius-4);
+  --radius-5: var(--radius-5);
+
+  --shadow-card: var(--shadow-card);
+  --shadow-card-hover: var(--shadow-card-hover);
+  --shadow-floating: var(--shadow-floating);
+  --shadow-dialog: var(--shadow-dialog);
+}

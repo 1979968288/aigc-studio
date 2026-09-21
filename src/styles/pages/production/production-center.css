@@ -1,0 +1,80 @@
+/*
+ * 制作工坊（四泳道生产工作台）共享布局样式
+ *
+ * 对齐 KK production-center.css 的四泳道结构：
+ *   剧本层 → 场次层 → 任务层 → 资产层（等分四泳道）
+ * 组件各自 scoped 样式只补充自身特有的视觉细节。
+ */
+
+.pc-page {
+  box-sizing: border-box;
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  padding: var(--spacing-5);
+  background: var(--color-bg-page);
+  overflow: hidden;
+}
+
+.pc-swimlanes {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: stretch;
+  gap: var(--spacing-4);
+  width: 100%;
+  overflow: hidden;
+}
+
+.pc-workspace-panel {
+  box-sizing: border-box;
+  min-width: 0;
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-5);
+  background: var(--component-panel-background);
+  padding: var(--spacing-4);
+  transition:
+    border-color 0.18s ease,
+    background 0.18s ease;
+}
+
+.pc-workspace-panel:hover {
+  border-color: var(--color-border-accent);
+}
+
+.pc-lane {
+  flex: 1 1 0;
+  width: 25%;
+}
+
+.pc-lane__header {
+  margin-bottom: var(--spacing-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-3);
+  flex: 0 0 auto;
+}
+
+.pc-lane__title {
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.2;
+}
+
+.pc-lane__body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+  overflow-y: auto;
+}
